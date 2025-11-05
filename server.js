@@ -4,7 +4,9 @@ const errorHandler = require("./middleware/errorhandler");
 const connectDB = require("./config/dbConnection");
 const dotenv = require("dotenv").config();
 
+// Connect to database
 connectDB();
+
 const app = express();
 
 const port = process.env.PORT || 5001;
@@ -23,7 +25,13 @@ app.use("/api/contacts", require("./routes/contactRoutes")); // Simple contact r
 // app.use("/api/users", require("./routes/userRoutes"));
 app.use(errorHandler);
 
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-});
+// Only start server if not in production (Vercel handles this)
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(port, () => {
+        console.log(`Server running on port ${port}`);
+    });
+}
+
+// Export for Vercel serverless
+module.exports = app;
 
