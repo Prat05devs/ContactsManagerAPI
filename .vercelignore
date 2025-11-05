@@ -1,0 +1,28 @@
+# Dependencies
+node_modules
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Development files
+.git
+.gitignore
+.DS_Store
+
+# Documentation (optional - remove these lines if you want to deploy docs)
+frontend-integration
+*.md
+!README.md
+
+# Logs
+*.log
+npm-debug.log*
+
+# IDE
+.vscode
+.idea
+
+# Testing
+coverage
