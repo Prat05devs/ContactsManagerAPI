@@ -13,13 +13,28 @@ const port = process.env.PORT || 5001;
 
 // Enable CORS for frontend integration
 app.use(cors({
-    origin: process.env.FRONTEND_URL || 'http://localhost:8080', // Your frontend URL
+    origin: 'https://crmassignmentprateek.vercel.app', // Allow all origins for now - update with your frontend URL later
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 app.use(express.json());
+
+// Root route for API health check
+app.get("/", (req, res) => {
+    res.json({ 
+        message: "Contacts Manager API is running!",
+        endpoints: {
+            getAllContacts: "GET /api/contacts",
+            createContact: "POST /api/contacts",
+            getContact: "GET /api/contacts/:id",
+            updateContact: "PUT /api/contacts/:id",
+            deleteContact: "DELETE /api/contacts/:id"
+        }
+    });
+});
+
 app.use("/api/contacts", require("./routes/contactRoutes")); // Simple contact routes (no auth)
 // User routes removed - JWT authentication not needed for this assignment
 // app.use("/api/users", require("./routes/userRoutes"));
