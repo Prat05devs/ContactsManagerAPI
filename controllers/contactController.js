@@ -23,13 +23,12 @@ const createContact = asyncHandler(async(req, res) => {
         name,
         email,
         phone
-        // No user_id needed anymore
     });
 
     res.status(201).json(contact);
 });
 
- //@desc Get contact
+//@desc Get contact
 //@route GET api/contacts/:id
 //@access public
 const getContact = asyncHandler(async(req, res) => {
@@ -71,7 +70,6 @@ const deleteContact = asyncHandler(async(req, res) => {
         throw new Error("Contact not found");
     }
     
-    // No user authorization check needed anymore
     await Contact.deleteOne({_id: req.params.id});
     res.status(200).json(contact);
 });

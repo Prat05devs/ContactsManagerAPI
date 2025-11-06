@@ -13,7 +13,7 @@ const port = process.env.PORT || 5001;
 
 // Enable CORS for frontend integration
 app.use(cors({
-    origin: 'https://crmassignmentprateek.vercel.app', // Allow all origins for now - update with your frontend URL later
+    origin: '*', // Allow all origins for now - update with your frontend URL later
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
