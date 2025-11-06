@@ -150,8 +150,7 @@ ContactsManagerAPI/
 │   ├── contactService.js    # API service for frontend
 │   ├── ContactList.jsx      # Example React component
 │   ├── README.md            # Integration guide
-│   └── TESTING.md           # Testing guide
-├── .env.example             # Environment variables template
+├── .env                     # Environment variables template
 ├── .gitignore               # Git ignore rules
 ├── constants.js             # HTTP status codes
 ├── package.json             # Project dependencies
@@ -225,10 +224,6 @@ Test the API using:
 - **Postman:** Import the endpoints and test
 - **Frontend:** Use the provided `contactService.js`
 
-## 📄 License
-
-This project is licensed under the MIT License.
-
 ## 👤 Author
 
 **Prateek Thapliyal**
@@ -236,14 +231,6 @@ This project is licensed under the MIT License.
 - GitHub: [@Prat05devs](https://github.com/Prat05devs)
 - Repository: [ContactsManagerAPI](https://github.com/Prat05devs/ContactsManagerAPI)
 
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-
-## ⭐ Show Your Support
-
-Give a ⭐️ if this project helped you!
-
 ---
 
-**Note:** This is a simple contact management API without authentication, perfect for dashboard applications and learning purposes. For production applications with sensitive data, consider implementing proper authentication and authorization.
+**Note:** This is a simple contact management API without authentication, for dashboard applications and learning purposes. 
